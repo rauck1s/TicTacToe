@@ -13,6 +13,7 @@ public class TicTacToe extends JComponent {
     public TicTacToe(){
         enableEvents(AWTEvent.MOUSE_EVENT_MASK);
     }
+    /*клики мышки*/
     @Override
     protected void processMouseEvent(MouseEvent mouseEvent){
         super.processMouseEvent(mouseEvent);
@@ -30,6 +31,8 @@ public class TicTacToe extends JComponent {
             }
         }
     }
+    /*отвечает за рисовку ноликов и крестиков, но подумать надо про алгоритм с раставлением ноликов(как передать ячейку,
+    * как определять где крестики и как лучше ставить нолики)*/
     void drawX0(Graphics graphics){
         for(int i = 0; i < 3; i ++){
             for(int j = 0; j < 3; j ++){
@@ -37,6 +40,7 @@ public class TicTacToe extends JComponent {
             }
         }
     }
+    /*ставит крестики*/
     void drawX(int i, int j, Graphics graphics){
         graphics.setColor(Color.BLUE);
         int dw = getWidth() / 3;
@@ -46,6 +50,7 @@ public class TicTacToe extends JComponent {
         graphics.drawLine(x, y, x + dw , y + dh);
         graphics.drawLine(x, y + dh, x + dw , y);
     }
+    /*ставит нолики*/
     void draw0(int i, int j, Graphics graphics){
         graphics.setColor(Color.RED);
         int dw = getWidth() / 3;
